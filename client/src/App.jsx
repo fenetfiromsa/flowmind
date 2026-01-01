@@ -30,7 +30,6 @@ export default function App() {
           <Route path="settings" element={<Setting />} />  
           <Route path="Profile" element={<Profile />} />  
         </Route>
-
       </Routes>
     </BrowserRouter>
   );

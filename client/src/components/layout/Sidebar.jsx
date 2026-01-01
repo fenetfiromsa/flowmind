@@ -6,7 +6,8 @@ import {
   MessageCircle,
   Notebook,
   CheckSquare,
-  Settings
+  Settings,
+  LogOut
 } from "lucide-react";
 
 function Sidebar() {
@@ -16,7 +17,7 @@ function Sidebar() {
     "flex items-center gap-3 font-semibold p-3 rounded-lg hover:bg-gradient-to-r from-teal-300 to-purple-400";
 
   return (
-    <div className="w-64 min-h-screen bg-white border-r p-6 space-y-2">
+    <div className="w-64 min-h-screen bg-white border-r p-6 space-y-2 fixed">
       <h1 className="text-xl font-bold text-indigo-600 mb-11">FlowMind</h1>
 
       <nav className="space-y-3">
@@ -69,7 +70,13 @@ function Sidebar() {
           <span>Settings</span>
         </NavLink>
 
-        <Button>Log Out</Button>
+        <NavLink
+          to="/dashboard/settings"
+          className={({ isActive }) => (isActive ? activeClass : normalClass)}
+        >
+          <LogOut size={18} />
+          <span>Log Out</span>
+        </NavLink>
       </nav>
     </div>
   );
